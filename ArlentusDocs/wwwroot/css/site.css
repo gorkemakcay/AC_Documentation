@@ -1,0 +1,194 @@
+/*#postHeader {
+    width: 50%;
+    background-color: darkorange;
+    color: white;
+    font-weight: 700;
+    border-radius: 20px;
+    margin: 50px;
+}
+
+#postHeader::placeholder {
+    color: white;
+    font-weight: 700;
+    opacity: .7;
+}*/
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+}
+
+#treeListArea {
+    overflow: auto;
+}
+
+.jstree {
+    color: white;
+}
+
+.jstree-default .jstree-clicked {
+    background: #F47174 !important;
+    font-weight: 500;
+    border-radius: 25px !important;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.jstree-hovered {
+    background-color: #F47174 !important;
+    border-radius: 25px !important;
+}
+
+/*Splitter.js Configurations*/
+.gutter {
+    padding: 0;
+    cursor: col-resize;
+    background-color: #363636 !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% !important;
+}
+
+    .gutter.gutter-horizontal {
+        background-image: url('/vertical_dots.png') !important;
+        background-size: 24px 24px !important;
+    }
+
+#postHeader {
+    color: white;
+}
+
+#editButton, #saveButton {
+    border-radius: 25px;
+    background-color: #F47174;
+    width: 200px;
+    border: none;
+    color: white;
+    font-weight: 500;
+}
+
+
+/* Scroll Bar */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #363636;
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #363636;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #363636;
+    background-image: -webkit-linear-gradient(45deg, 
+                      rgba(255, 255, 255, .2) 25%,
+                      transparent 0%, 
+                      transparent 50%, 
+                      rgba(255, 255, 255, .2) 50%, 
+                      rgba(255, 255, 255, .2) 75%, 
+                      transparent 75%,
+                      transparent)
+}
+
+/* width */
+/*::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}*/
+
+/* Track */
+/*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}*/
+
+/* Handle */
+/*::-webkit-scrollbar-thumb {
+    background: #888;
+}*/
+
+    /* Handle on hover */
+    /*::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }*/
+
+
+/******************** Navbar ********************/
+
+.navbar {
+    overflow: hidden;
+    /*background-color: #333;*/
+}
+
+    .navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn {
+        background-color: #F47174;
+        color: white !important;
+        border-radius: 25px;
+    }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #F47174;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/****************************************/
