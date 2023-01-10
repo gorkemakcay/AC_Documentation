@@ -82,14 +82,15 @@ $(function () {
 
                         // Button Area
                         buttonArea.children().remove();
-                        var editButton = `<button id="editButton" type="button" onclick="editPost()">Edit</button>`;
+                        var editButton = `<button id="editButton" class="float-end" type="button" onclick="editPost()">Edit</button>`;
                         buttonArea.append(editButton);
 
                         // Post Area
                         postArea.children().remove();
-                        var header = `<h4 id="postHeader">${currentPost.Header}</h4>`;
-                        var context = `<div id="summernote">${currentPost.Context}</div>`;
-                        postArea.append(header, context);
+                        var header = `<h4 id="postHeader" style="margin-left: 100px;">${currentPost.Header}</h4>`;
+                        var br = `<br />`;
+                        var context = `<div id="summernote" style="word-wrap: break-word;">${currentPost.Context}</div>`;
+                        postArea.append(header, br, context);
                     }
                 });
             });
@@ -132,7 +133,7 @@ $(function () {
                                 // Post Area
                                 postArea.children().remove();
                                 var header = `<h4 id="postHeader">${currentPost.Header}</h4>`;
-                                var context = `<div id="summernote">${currentPost.Context}</div>`;
+                                var context = `<div id="summernote" style="word-wrap: break-word;">${currentPost.Context}</div>`;
                                 postArea.append(header, context);
                             }
                         });
@@ -176,7 +177,7 @@ $(function () {
         },
         gutterSize: 20,
         sizes: [20, 80],
-        minSize: [300, 300],
+        minSize: [300, 1200],
         snapOffset: 0
     });
     // #endregion
@@ -189,15 +190,26 @@ $(function () {
 function editPost() {
     // Button Area
     buttonArea.children().remove();
-    var saveButton = `<button id="saveButton" type="button" onclick="savePost()">Save</button>`;
+    var saveButton = `<button id="saveButton" class="float-end" type="button" onclick="savePost()">Save</button>`;
     buttonArea.append(saveButton);
 
     // Post Area
     postArea.children().remove();
-    var header = `<input id="postHeaderInput" type="text" placeholder="Header" style="width: 100%;" value="${currentPost.Header}" />`;
-    var context = `<div id="summernote">${currentPost.Context}</div>`;
-    postArea.append(header, context);
-    $('#summernote').summernote();
+    var header = `<input id="postHeaderInput" type="text" placeholder="Header" style="width: 100%; height:25px; border-radius: 25px; border: none; background-color: #363636; color: white; padding-left: 10px;" value="${currentPost.Header}" />`;
+    var br = `<br /><br />`;
+    var context = `<div id="summernote" style="word-wrap: break-word;">${currentPost.Context}</div>`;
+    postArea.append(header, br, context);
+    $('#summernote').summernote({
+        "toolbar": [
+            ["style", ["bold", "italic", "underline", "strikethrough", "clear", "fontname", "fontsize", "color", "superscript", "subscript"]],
+            ["para", ["style", "ul", "ol", "paragraph", "height"]],
+            ["view", ["undo", "redo"]],
+            ["insert", ["link", "picture", "video", "table", "hr"]]
+        ],
+        lineHeights: ['0.2','0.4', '0.6', '0.8', '1.0', '1.2', '1.4', '1.6', '1.8', '2.0']
+    });
+    $(".note-toolbar").addClass("text-center");
+    $(".note-editable").addClass("p-0");
 }
 // #endregion
 
@@ -222,14 +234,15 @@ function savePost() {
 
             // Button Area
             buttonArea.children().remove();
-            var editButton = `<button id="editButton" type="button" onclick="editPost()">Edit</button>`;
+            var editButton = `<button id="editButton" class="float-end" type="button" onclick="editPost()">Edit</button>`;
             buttonArea.append(editButton);
 
             // Post Area
             postArea.children().remove();
-            var header = `<h4 id="postHeader">${updatedPostModel.Header}</h4>`;
-            var context = `<div id="summernote">${updatedPostModel.Context}</div>`;
-            postArea.append(header, context);
+            var header = `<h4 id="postHeader" style="margin-left: 100px;">${updatedPostModel.Header}</h4>`;
+            var br = `<br />`;
+            var context = `<div id="summernote" style="word-wrap: break-word;">${updatedPostModel.Context}</div>`;
+            postArea.append(header, br, context);
         },
         error: function (error) {
             alert("Error!");

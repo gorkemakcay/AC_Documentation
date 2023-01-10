@@ -35,6 +35,8 @@ body {
     overflow: auto;
 }
 
+
+/* jsTree */
 .jstree {
     color: white;
 }
@@ -50,6 +52,10 @@ body {
 .jstree-hovered {
     background-color: #F47174 !important;
     border-radius: 25px !important;
+}
+
+.jstree-default a.jstree-search {
+    color: orange;
 }
 
 /*Splitter.js Configurations*/
@@ -129,10 +135,10 @@ body {
 
 /******************** Navbar ********************/
 
-.navbar {
-    overflow: hidden;
+/*.navbar {
+    overflow: hidden;*/
     /*background-color: #333;*/
-}
+/*}
 
     .navbar a {
         float: left;
@@ -189,6 +195,28 @@ body {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
+}*/
 
 /****************************************/
+
+/* Summernote */
+
+.note-btn {
+    color: white !important;
+    background-color: #3D3D3D !important;
+    border-radius: 10px !important;
+    margin: 5px !important;
+    border-color: #3D3D3D !important;
+}
+
+.note-toolbar {
+    border: none !important;
+}
+
+.note-statusbar {
+    display: none !important;
+}
+
+.note-editable {
+    border: none;
+}
